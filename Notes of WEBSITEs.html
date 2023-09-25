@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    .accordion {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .accordion-item {
+      margin-bottom: 10px;
+    }
+
+    .accordion-title {
+      color: #333;
+      background-color: #f4f4f4;
+      cursor: pointer;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .accordion-title:hover {
+      background-color: #ddd;
+    }
+
+    .accordion-content {
+      background: #fff;
+      display: none;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-top: none;
+      border-radius: 0 0 5px 5px;
+    }
+
+    .accordion-item.active .accordion-content {
+      display: block;
+    }
+
+    .top-heading {
+      text-align: center;
+      color: #333;
+      background-color: #f4f4f4;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 24px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="top-heading">Notes by Canals Technologies</h1>
+  <div class="accordion">
+    <ol>
+
+      <li>
+        <div class="accordion-item">
+          <div class="accordion-title">
+            Learn How to code.
+          </div>
+          <div class="accordion-content">
+            <a target="_blank" href="https://aimahusnain.github.io/JavaScript-exercise-websites/">
+                JavaScript-exercise-websites</a>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="accordion-item">
+          <div class="accordion-title">
+            Income School
+          </div>
+          <div class="accordion-content">
+            <a target="_blank" href="https://aimahusnain.github.io/Income-School/">
+                Income School</a>
+          </div>
+        </div>
+      </li>
+      
+    </ol>
+  </div>
+  <script>
+    const accordionItems = document.querySelectorAll(".accordion-item");
+
+    accordionItems.forEach((item) => {
+      const title = item.querySelector(".accordion-title");
+      const content = item.querySelector(".accordion-content");
+
+      title.addEventListener("click", () => {
+        for (i = 0; i < accordionItems.length; i++) {
+          if (accordionItems[i] != item) {
+            accordionItems[i].classList.remove("active");
+          } else {
+            // Toggle the accordion item
+            item.classList.toggle("active");
+          }
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
